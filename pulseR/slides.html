@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="reveal.js/css/reveal.css">
+		 <!-- <link rel="stylesheet" href="hd.css" id="theme"> -->
+     <link rel="stylesheet" href="reveal.js/css/theme/white.css" id="theme">
+
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' :
+                'reveal.js/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+	
+		<div class="reveal">
+			<div class="slides">
+			
+			<section id="progress-report" class="slide level1">
+			
+<h1>Progress report</h1>
+<p>Alexey Uvarovskii <br>
+University Hospital Heidelberg </p>
+<img align="right" src="heart.png" width="100">
+</section>
+
+<section>
+<h1> what I am doing </h1>
+<ul>
+<li><span style="color:green"> RNA metabolism </span> <br>
+in MCF7 cells (Cologne), <code>pulseR</code></li>
+<li><span style="color:green"> differential expression </span><br>DKFZ, Immunology, <em>post mortum </em> experiment analysis</li>
+<li> <span style="color:green">data visualization</span> <br>
+circular RNA primer design
+</ul>
+</section>
+
+<section>
+<h1> Uncertain fit </h1>
+<img src="fig/ci.gif" width="60%">
+
+</section>
+        
+<section>
+<h1> Uncertain fit </h1>
+<img src="fig/cisD.png" width="40%">
+
+</section>
+
+
+<section>
+<h1> Uncertain fit </h1>
+<img src="fig/predict.png" width="40%">
+
+</section>
+
+
+<section id="outline" class="slide level1">
+<h1>Outline</h1>
+<ul>
+
+<li>circular RNA tools</li> 
+<li>pulseR package</li>
+</ul>
+</section>
+
+<section id="outline" class="slide level1">
+  <h3> The workflow </h3>
+ <pre><code data-trim>
+library(pulseR)
+formulas <- MeanFormulas(
+  total = mu,
+  lab   = mu * (1 - exp(-d * time)),
+  unlab = mu * exp(-d * time)
+)
+pd <- PulseData(counts, conditions, formulas, fractions, spikeins)
+options <- ...
+guess <- ...
+fit <- fitModel(pd, guess, options)
+ </pre></code>
+  </section>
+
+    </div>
+  </div>
+
+		<script src="reveal.js/lib/js/head.min.js"></script>
+		<script src="reveal.js/js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+        transition: 'slide',
+          math: {
+         mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+        config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+        },
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'reveal.js/plugin/markdown/marked.js' },
+					{ src: 'reveal.js/plugin/markdown/markdown.js' },
+					{ src: 'reveal.js/plugin/notes/notes.js', async: true },
+					{ src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: 'reveal.js/plugin/math/math.js', async: true }
+				]
+			});
+            Reveal.addEventListener( 'fragmentshown', function( event ) {
+                var video = event.fragment.querySelector( 'video' );
+                if( video) {
+                    video.play();
+                }
+            } );
+		</script>
+	</body>
+</html>
