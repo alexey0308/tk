@@ -3,8 +3,7 @@
 	var isEnabled = true;
 
 	document.querySelector( '.reveal .slides' ).addEventListener( 'mousedown', function( event ) {
-// 		var modifier = ( Reveal.getConfig().zoomKey ? Reveal.getConfig().zoomKey : 'alt' ) + 'Key';
-                var modifier = ( Reveal.getConfig().zoomKey ? Reveal.getConfig().zoomKey : 'ctrl' ) + 'Key';
+		var modifier = ( Reveal.getConfig().zoomKey ? Reveal.getConfig().zoomKey : 'alt' ) + 'Key';
 
 		var zoomPadding = 20;
 		var revealScale = Reveal.getScale();
@@ -12,7 +11,17 @@
 		if( event[ modifier ] && isEnabled ) {
 			event.preventDefault();
 
-			var bounds = event.target.getBoundingClientRect();
+			var bounds;
+			var originalDisplay = event.target.style.display;
+
+			// Get the bounding rect of the contents, not the containing box
+			if( window.getComputedStyle( event.target ).display === 'block' ) {
+				event.target.style.display = 'inline-block';
+				bounds = event.target.getBoundingClientRect();
+				event.target.style.display = originalDisplay;
+			} else {
+				bounds = event.target.getBoundingClientRect();
+			}
 
 			zoom.to({
 				x: ( bounds.left * revealScale ) - zoomPadding,

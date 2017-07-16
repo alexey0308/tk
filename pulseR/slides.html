@@ -7,8 +7,9 @@
 		<title>reveal.js</title>
 
 		<link rel="stylesheet" href="reveal.js/css/reveal.css">
+		
 		 <!-- <link rel="stylesheet" href="hd.css" id="theme"> -->
-     <link rel="stylesheet" href="reveal.js/css/theme/white.css" id="theme">
+     <link rel="stylesheet" href="pulseR.css" id="theme">
 
 
 		<!-- Theme used for syntax highlighting of code -->
@@ -16,37 +17,80 @@
 
 		<!-- Printing and PDF exports -->
 		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' :
-                'reveal.js/css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
 	</head>
 	<body>
 	
 		<div class="reveal">
 			<div class="slides">
 			
-			<section id="progress-report" class="slide level1">
-			
-<h1>Progress report</h1>
-<p>Alexey Uvarovskii <br>
-University Hospital Heidelberg </p>
-<img align="right" src="heart.png" width="100">
+<section id="main" class="slide level1" data-background-color="#333333">
+<p style="font-family: sans" >Analysis of RNA dynamics <br> 
+<span style="font-size: 70%" </span>using</p>
+<!-- <div style = "left: 250px; top: 200px; position: absolute" > -->
+<div>
+  <img  src="logo_background.gif" width="300">
+</div>
+<!-- <div style = "left: 250px; top: 400px; position: absolute" > -->
+<div>
+  <div style="display: inline-block">
+    <p style="line-height: 1; font-family: sans; font-size: 70%" >
+    Alexey Uvarovskii,  Christoph Dieterich</p>
+    <p style="font-family: sans; font-size: 70%">
+      University Hospital Heidelberg </p>
+  </div>
+<!--
+  <div style="display: inline-block;">
+    <img align="center" style="background-color: #333333" src="heart.png" width="100">
+  </div>
+-->
+</div>
 </section>
 
-<section>
-<h1> what I am doing </h1>
-<ul>
-<li><span style="color:green"> RNA metabolism </span> <br>
-in MCF7 cells (Cologne), <code>pulseR</code></li>
-<li><span style="color:green"> differential expression </span><br>DKFZ, Immunology, <em>post mortum </em> experiment analysis</li>
-<li> <span style="color:green">data visualization</span> <br>
-circular RNA primer design
-</ul>
+<section >
+<div>
+  <h3 > Acknowledgement </h3>
+</div>
+<div style="">
+  <div style="display: inline-block; vertical-align: middle">
+    <img align="center" src="fig/siegel/siegel-uni.jpeg" width="200" >
+  </div>
+  <div style="display: inline-block; vertical-align: middle">
+    <img align="center" src="fig/siegel/bmbf.png" width="250">
+  </div>
+  <div style="display: inline-block; vertical-align: middle">
+    <img align="center" src="fig/siegel/DZHK_Logo.jpg" width="400">
+  </div>
+</div>
 </section>
+
+<section >
+<h2> Do you see a difference? </h2>
+</section>
+
+
+<section >
+<h3> Pulse-chase experiment </h3>
+<div>
+    <img align="center" src="fig/chase.png" width="650">
+</div>
+</section>
+
+<section >
+</section>
+
+
+<section >
+</section>
+
+<section >
+</section>
+
 
 <section>
 <h1> Uncertain fit </h1>
@@ -104,6 +148,7 @@ fit <- fitModel(pd, guess, options)
 			Reveal.initialize({
 				history: true,
         transition: 'slide',
+        backgroundTransition: 'slide',
           math: {
          mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
         config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
