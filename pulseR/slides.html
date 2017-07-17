@@ -29,7 +29,8 @@
 		<div class="reveal">
 			<div class="slides">
 			
-<section id="main" class="slide level1" data-background-color="#333333">
+<section id="main" class="slide level1" data-background-color="#333333"
+data-background-transition="slide">
 <p style="font-family: sans" >Analysis of RNA dynamics <br> 
 <span style="font-size: 70%" </span>using</p>
 <!-- <div style = "left: 250px; top: 200px; position: absolute" > -->
@@ -69,10 +70,23 @@
 </div>
 </section>
 
-<section >
+<section data-transition="slide-in fade-out">
 <h2> Do you see a difference? </h2>
+
+<div style="position:relative; width:640px; margin:0 auto;">
+<p class="fragment " data-fragment-index="0" > Number of motor vehicle deaths in the US</p>
+</div>
+<div style="position:relative; width:640px; height:480px; margin:0 auto;">
+  <img class="fragment fade-out" data-fragment-index="0" width="640" height="480" 
+  src="fig/twoBar.png" style="position:absolute;top:0;left:0;" />
+  <img class="fragment "  data-fragment-index="0" width="640" height="480"
+  src="fig/twoBar-cars.png" style="position:absolute;top:0;left:0;" />
+</div>
 </section>
 
+<section  data-background-color="#FDBF6F" data-transition="fade-in fade-out">
+<h2> Have you already started  interpreting? </h2>
+</section>
 
 <section >
 <h3> Pulse-chase experiment </h3>
@@ -81,8 +95,6 @@
 </div>
 </section>
 
-<section >
-</section>
 
 
 <section >
@@ -148,7 +160,7 @@ fit <- fitModel(pd, guess, options)
 			Reveal.initialize({
 				history: true,
         transition: 'slide',
-        backgroundTransition: 'slide',
+        backgroundTransition: 'fade',
           math: {
          mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
         config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
