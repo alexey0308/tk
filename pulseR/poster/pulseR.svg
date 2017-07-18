@@ -34,9 +34,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35"
-     inkscape:cx="862.3115"
-     inkscape:cy="1081.5302"
+     inkscape:zoom="0.25"
+     inkscape:cx="590.45414"
+     inkscape:cy="1863.3958"
      inkscape:document-units="mm"
      inkscape:current-layer="g4997"
      showgrid="true"
@@ -4687,30 +4687,22 @@
          height="115.52175"
          width="197.05203"
          transform="scale(1,-1)" />
-      <rect
-         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.83464567;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
-         id="rect7121"
-         width="1077.3107"
-         height="1246.5895"
-         x="55.564579"
-         y="281.38062"
-         transform="scale(1,-1)" />
-      <rect
-         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.83464567;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
-         id="rect7121-5"
-         width="1077.3107"
-         height="1246.5895"
-         x="1246.9158"
-         y="281.38062"
-         transform="scale(1,-1)" />
-      <rect
-         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.83464575;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-         id="rect7121-56"
-         width="1077.3107"
-         height="1246.5895"
-         x="1245.0258"
-         y="1614.754"
-         transform="scale(1,-1)" />
+      <g
+         id="g8502">
+        <rect
+           transform="scale(1,-1)"
+           y="281.38068"
+           x="55.564655"
+           height="1246.5894"
+           width="1077.426"
+           id="rect7121"
+           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:2.83479737999999992;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+        <path
+           inkscape:connector-curvature="0"
+           id="path8500"
+           style="fill:#113e74;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           d="m 56.037213,-383.10054 1080.261787,0 0,102.04725 -1080.261787,0 0,-102.04725 z" />
+      </g>
       <image
          y="1053.2598"
          x="580.44666"
@@ -4718,14 +4710,6 @@
          xlink:href="file:///home/alex/Documents/mywork/tk/pulseR/fig/chase.png"
          height="418.34473"
          width="522.93115"
-         transform="scale(1,-1)" />
-      <rect
-         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.91450667;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-         id="rect7121-3"
-         width="1107.662"
-         height="1281.7098"
-         x="40.389065"
-         y="1624.4508"
          transform="scale(1,-1)" />
       <g
          id="g9449"
@@ -4744,7 +4728,7 @@
            height="176.13885"
            xlink:href="file:///home/alex/Documents/mywork/tk/pulseR/fig/badCI.png"
            id="image8743"
-           x="628.56262"
+           x="212.56262"
            y="2537.6418" />
         <image
            transform="scale(1,-1)"
@@ -4752,28 +4736,28 @@
            height="176.13876"
            xlink:href="file:///home/alex/Documents/mywork/tk/pulseR/fig/goodCI.png"
            id="image8808"
-           x="392.10507"
+           x="524.90491"
            y="2537.6577" />
       </g>
       <image
-         y="2204.3311"
-         x="408.08673"
+         y="2081.4468"
+         x="421.61392"
          id="image8945"
          xlink:href="file:///home/alex/Documents/mywork/tk/pulseR/fig/fit.png"
-         height="297.54141"
-         width="396.72189"
+         height="268.09091"
+         width="357.45456"
          transform="scale(1,-1)" />
       <image
-         y="2204.3311"
-         x="11.313953"
+         y="2081.4468"
+         x="64.113914"
          id="image9064"
          xlink:href="file:///home/alex/Documents/mywork/tk/pulseR/fig/predict.png"
-         height="297.54141"
-         width="397.00208"
+         height="268.09091"
+         width="357.70764"
          transform="scale(1,-1)" />
       <image
-         y="1046.4076"
-         x="1246.5884"
+         y="1048.2974"
+         x="1291.9427"
          id="image9145"
          xlink:href="file:///home/alex/Documents/mywork/tk/pulseR/fig/spikeins.png"
          height="480"
@@ -4788,28 +4772,28 @@
          width="840"
          transform="scale(1,-1)" />
       <image
-         y="2204.3311"
-         x="761.22772"
+         y="2081.4468"
+         x="739.80115"
          id="image9581"
          xlink:href="file:///home/alex/Documents/mywork/tk/pulseR/fig/ciH9-mu.png"
-         height="297.54141"
-         width="446.31213"
+         height="268.09091"
+         width="402.13751"
          transform="scale(1,-1)" />
       <flowRoot
          xml:space="preserve"
          id="flowRoot9584"
          style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
-         transform="matrix(0.8,0,0,-0.8,55.3443,141.30896)"><flowRegion
+         transform="matrix(0.8,0,0,-0.8,-27.8557,141.30896)"><flowRegion
            id="flowRegion9586"><rect
              id="rect9588"
              width="335.52716"
              height="465.75775"
              x="1117.2288"
              y="3322.0376" /></flowRegion><flowPara
-           id="flowPara9590" /><flowPara
-           id="flowPara9592">profile likelihood blablablaprofile likelihood blablablaprofile likelihood blablablaprofile likelihood blablablaprofile likelihood blablablaprofile likelihood blablablaprofile</flowPara><flowPara
-           id="flowPara9594">profile likelihood blablablaprofile likelihood blablablaprofile likelihood blablablaprofile likelihood blablabla</flowPara></flowRoot>      <flowRoot
-         transform="matrix(0.8,0,0,-0.8,-796.66185,2339.5176)"
+           id="flowPara9594">95% CI for the degrgadation rate. The genes are ordered by the fitted value.</flowPara><flowPara
+           id="flowPara7082">Large CI are observed for a gene subset with the fitted value in a certain range (red rectangle).</flowPara><flowPara
+           id="flowPara7084">The diagnostic plots of the PL shows  </flowPara></flowRoot>      <flowRoot
+         transform="matrix(0.8,0,0,-0.8,-796.66185,2201.9176)"
          xml:space="preserve"
          id="flowRoot9584-2"
          style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"><flowRegion
@@ -4826,7 +4810,7 @@
            id="flowPara5745" /><flowPara
            id="flowPara5743" /><flowPara
            id="flowPara5741" /></flowRoot>      <flowRoot
-         transform="matrix(0.8,0,0,-0.8,381.15985,2341.9221)"
+         transform="matrix(0.8,0,0,-0.8,381.15985,2265.1221)"
          xml:space="preserve"
          id="flowRoot9584-2-9"
          style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"><flowRegion
@@ -6194,6 +6178,65 @@
              x="1385.8354"
              id="tspan5779-6-5-2-1-9"
              sodipodi:role="line">language</tspan></text>
+      </g>
+      <image
+         y="1769.2423"
+         x="112.73013"
+         id="image8497"
+         xlink:href="file:///home/alex/Documents/mywork/tk/pulseR/fig/vilchez.png"
+         height="227.00018"
+         width="454.00037"
+         transform="scale(1,-1)" />
+      <g
+         id="g8506"
+         transform="translate(1168,0)">
+        <rect
+           style="fill:none;stroke:#000000;stroke-width:2.83479738;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+           id="rect8508"
+           width="1077.426"
+           height="1246.5894"
+           x="55.564655"
+           y="281.38068"
+           transform="scale(1,-1)" />
+        <path
+           d="m 56.037213,-383.10054 1080.261787,0 0,102.04725 -1080.261787,0 0,-102.04725 z"
+           style="fill:#113e74;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="path8510"
+           inkscape:connector-curvature="0" />
+      </g>
+      <g
+         id="g8512"
+         transform="translate(0,-1331.2)">
+        <rect
+           style="fill:none;stroke:#000000;stroke-width:2.96059704;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+           id="rect8514"
+           width="1077.3002"
+           height="1359.8428"
+           x="55.627556"
+           y="281.44357"
+           transform="scale(1,-1)" />
+        <path
+           d="m 56.037213,-383.10054 1080.261787,0 0,102.04725 -1080.261787,0 0,-102.04725 z"
+           style="fill:#113e74;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="path8516"
+           inkscape:connector-curvature="0" />
+      </g>
+      <g
+         transform="translate(1168,-1331.2)"
+         id="g8518">
+        <rect
+           transform="scale(1,-1)"
+           y="281.44357"
+           x="55.627556"
+           height="1359.8428"
+           width="1077.3002"
+           id="rect8520"
+           style="fill:none;stroke:#000000;stroke-width:2.96059704;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+        <path
+           inkscape:connector-curvature="0"
+           id="path8522"
+           style="fill:#113e74;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           d="m 56.037213,-383.10054 1080.261787,0 0,102.04725 -1080.261787,0 0,-102.04725 z" />
       </g>
     </g>
   </g>
