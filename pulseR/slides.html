@@ -31,7 +31,7 @@
 			<div class="slides">
 			
 <section id="main" class="slide level1" data-background-color="#333333"
-data-background-transition="slide" data-transition="slide">
+data-background-transition="slide" data-transition="slide" data-state="title">
 <p style="font-family: sans" >Analysis of RNA dynamics <br> 
 <span style="font-size: 70%" </span> using</p>
 <!-- <div style = "left: 250px; top: 200px; position: absolute" > -->
@@ -103,7 +103,7 @@ Number of motor vehicle deaths in the US <span style="font-size:80%"> (wiki)
   $\sf \frac{d[\text{RNA}]}{dt} = +$</span>
 <span style="color:#e31a1c" >$\sf  [\text{synthesis}] $ </span>
 <span class="fragment" data-fragment-index="1" >$\sf  -$ </span>
-<span  style="color:#4690d4" >$\sf  [\text{degradation }]$</span>
+<span  style="color:#4690d4" >$\sf  [\text{degradation}]$</span>
 <span class="fragment" data-fragment-index="1" >$\sf \cdot [\text{RNA}]$</span>
 </p>
 <p style="font-family:sans" class="fragment" data-fragment-index="1" >
@@ -131,7 +131,7 @@ usual RNA-seq after then
 </section>
 
 <section>
-<h2> background </h2>
+<h2> Background </h2>
 <ul>
 <li> rates are also interesting </li>
 <li> new RNA can be traced </li>
@@ -143,9 +143,9 @@ usual RNA-seq after then
 <section>
 <h1> Analysis </h1>
 <ul style="margin: 0 0 30px 0">
-<li> Math model </li>
-<li> Stat model </li>
-<li> Normalisation </li>
+<li> kinetic model </li>
+<li> stat model </li>
+<li> normalisation </li>
 </ul>
 
 <h3 class="fragment" >
@@ -157,9 +157,12 @@ usual RNA-seq after then
 <h2> Math model </h2>
 <p style="padding: 0 0 40px 0"> defined by the setup,
  e.g. pulse labelling is </p>
-<p> $$\sf [\text{total}] = T\equiv\text{const} $$
-$$ \sf[\text{pull down}] = T\cdot \left( 1 - e^{-dt}\right) $$
-<br>
+<p> $$
+\begin{align} \sf [\text{total}] &= T\equiv\text{const} \\
+ \sf[\text{pull down}] &= T\cdot \left( 1 - e^{-dt}\right) 
+\end{align}$$
+</p>
+<p>
 $$\sf t = 0, 1, 2, 4\, \text{hr} $$
 </p>
 </section>
@@ -173,9 +176,9 @@ $$\sf t = 0, 1, 2, 4\, \text{hr} $$
 
 <section>
 <h3> Normalisation </h3>
-$$\begin{align}
-[\text{total}]  &= \,[\text{labelled}] + [\text{unlabelled}] \\
-[\text{pull down}] &= ?[\text{labelled}] + ?[\text{unlabelled}] 
+$$\begin{align}\sf
+[\text{total}]  &= \sf\,[\text{labelled}] + [\text{unlabelled}] \\
+\sf[\text{pull down}] &=\sf ?[\text{labelled}] + ?[\text{unlabelled}] 
 \end{align}
 $$
 </section>
@@ -189,8 +192,9 @@ $$
 
 <section >
 <h3> In <span style="font-family: monospace"> pulseR </span></h3> 
+<h4> there are two options for normalisation: </h4>
 <div style="display: inline-block; text-align: right;">
-<p> using spike-ins (DESeq)</p>
+<p>  using spike-ins (DESeq)</p>
 <p> by MLE fitting </p> 
 </div>
 <div style="display: inline-block; text-align: left">
@@ -314,6 +318,7 @@ result <- fitModel(pd, ipar, opts)
          mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
         config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
         },
+                 slideNumber: 'c',
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
 					{ src: 'reveal.js/plugin/markdown/marked.js' },
