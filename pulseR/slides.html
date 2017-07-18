@@ -13,7 +13,8 @@
 
 
 		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+	      <link rel="stylesheet" href="reveal.js/lib/css/github.css"> 
+    <!--<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css"> -->
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -74,7 +75,9 @@ data-background-transition="slide" data-transition="slide">
 <h2> Do you see a difference? </h2>
 
 <div style="position:relative; width:640px; margin:0 auto;">
-<p class="fragment " data-fragment-index="0" > Number of motor vehicle deaths in the US</p>
+<p class="fragment " data-fragment-index="0" style="font-size:80%">
+Number of motor vehicle deaths in the US <span style="font-size:80%"> (wiki) 
+</span></p>
 </div>
 <div style="position:relative; width:640px; height:480px; margin:0 auto;">
   <img class="fragment fade-out" data-fragment-index="0" width="640" height="480" 
@@ -85,8 +88,11 @@ data-background-transition="slide" data-transition="slide">
 </section>
 
 <section  data-background-color="#ffffff" data-transition="fade-in fade-out">
-<h2> What value are you thinking of? </h2> 
-<h1 class="fragment" style="color:#4690d4"> Rates </h1>
+<h2> Same number, different context </h2>
+<div class="fragment" >
+<h2> I bet you think about</h2> 
+<h1 style="color:#4690d4"> Rates </h1>
+</div>
 </section>
 <!-- red color:#e31a1c -->
 <!-- blue color:#4690d4 -->
@@ -183,8 +189,8 @@ $$
 
 <section >
 <h3> In <span style="font-family: monospace"> pulseR </span></h3> 
-<div style="display: inline-block">
-<p> using spike-ins</p>
+<div style="display: inline-block; text-align: right;">
+<p> using spike-ins (DESeq)</p>
 <p> by MLE fitting </p> 
 </div>
 <div style="display: inline-block; text-align: left">
@@ -203,6 +209,17 @@ $$
 </section>
 
 <section >
+<h3> A number is not enough </h3>
+<p>
+<span style="font-family: monospace"> pulseR </span> 
+can estimate confidence intervals for you 
+</p>
+<div style="display: inline-block; text-align: left">
+ <p class="fragment" data-fragment-index="1" style="color:#e31a1c">Good for:
+ diagnostics and comparisons</p>
+</div>
+
+
 </section>
 
 <section >
@@ -215,48 +232,71 @@ $$
 </div>
 </section>
 
-
 <section>
-<h1> Uncertain fit </h1>
+
+<h3> Uncertainty in fit </h3>
 <img src="fig/ci.gif" width="60%">
 
 </section>
         
-<section>
-<h1> Uncertain fit </h1>
 
-</section>
-
-
-<section>
-
-</section>
-
-
+<section class="slide level1">
+  <h3> The workflow </h3>
+ <pre class="r">
+ <code >
+library(pulseR)
+# put math here
+formulas <- MeanFormulas(
+  total = mu,
+  labelled = mu * (1 - exp(-d*22)) * exp(-d*time),
+  unlabelled = mu * (1 - exp(-d*time) * (1 - exp(-d * 22)))
+)
+# define the fractions
+formulaIndexes <- list(
+  total_fraction = 'total',
+  pull_down      = c('labelled', 'unlabelled'))
+ </code>
+ </pre>
+ <pre class="r">
+ <code data-trim>
+pd <- PulseData(counts, conditions, formulas, formulaIndexes,
+  groups = ~ fraction + time)
+result <- fitModel(pd, ipar, opts)
+ </code>
+ </pre>
+  </section>
+  
 <section id="outline" class="slide level1">
-<h1>Outline</h1>
+<h3>
+<span style="font-family: monospace"> pulseR </span> allows to 
+</h3>
 <ul>
-
-<li>circular RNA tools</li> 
-<li>pulseR package</li>
+<li>estimate kinetic rates from RNA-seq</li>
+<li> flexible analysis (spike-ins, cross-contamination, etc.)</li>
+<li> diagnostics with profile likelihood</li>
 </ul>
 </section>
 
-<section id="outline" class="slide level1">
-  <h3> The workflow </h3>
- <pre><code data-trim>
-library(pulseR)
-formulas <- MeanFormulas(
-  total = mu,
-  lab   = mu * (1 - exp(-d * time)),
-  unlab = mu * exp(-d * time)
-)
-pd <- PulseData(counts, conditions, formulas, fractions, spikeins)
-options <- ...
-guess <- ...
-fit <- fitModel(pd, guess, options)
- </pre></code>
-  </section>
+<section>
+<div style="position:absolute; top:100px; left:180px">
+<p>dieterichlab.org </p>
+</div>
+<div style="position:absolute; top:80px; left:30px">
+<img src="heart.png" width="100px">
+</div>
+<div style="position:absolute; top:220px; left:180px">
+<p>github.com/dieterich-lab/pulseR </p>
+</div>
+<div style="position:absolute; top:180px; left:10px">
+<img src="logo.png" width="150px">
+</div>
+<div style="position:absolute; top:380px; left:180px">
+<p style="font-family:monospace"> alexey.mipt@gmail.com </p>
+</div>
+
+</section>
+
+
 
     </div>
   </div>
