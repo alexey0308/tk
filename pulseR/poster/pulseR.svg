@@ -23,9 +23,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1"
-     inkscape:cx="1012.2232"
-     inkscape:cy="2501.8138"
+     inkscape:zoom="0.5"
+     inkscape:cx="1526.5312"
+     inkscape:cy="844.99513"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -6886,7 +6886,9 @@
          id="flowPara7084">Large CI are observed for a gene subset with the fitted value in a certain range (red rectangle).  </flowPara><flowPara
          id="flowPara40386"><flowSpan
    id="flowSpan12498"
-   style="font-weight:bold;text-align:justify;text-anchor:start">F, G: </flowSpan>The diagnostic plots of the profile likelihood show uncertainty in identification of the degradation rate for some genes (fig. C) using data from this experiment. </flowPara></flowRoot>    <image
+   style="font-weight:bold;text-align:justify;text-anchor:start">F,<flowSpan
+   style="fill:#ffffff"
+   id="flowSpan42609">.</flowSpan>G: </flowSpan>The diagnostic plots of the profile likelihood show uncertainty in identification of the degradation rate for some genes (fig. C) using data from this experiment. </flowPara></flowRoot>    <image
        width="334.74771"
        height="251.06078"
        xlink:href="file:///home/alex/Documents/mywork/tk/pulseR/fig/goodCI.png"
