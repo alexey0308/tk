@@ -23,9 +23,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.25"
-     inkscape:cx="1421.1218"
-     inkscape:cy="1129.6031"
+     inkscape:zoom="1"
+     inkscape:cx="1012.2232"
+     inkscape:cy="2501.8138"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -6745,7 +6745,9 @@
              x="1081.7856"
              y="3314.1523"
              style="text-align:justify;text-anchor:start" /></flowRegion><flowPara
-           id="flowPara12506">Pulse-chase experiments allow to measure kinetic rates for RNA synthesis and degradation. After the pulse period, when cells are cultured in the presence of the label, the chase period follows with no labelling. Hence, the labelled RNA is being only degraded during the chase time.</flowPara><flowPara
+           id="flowPara12506"><flowSpan
+   style="font-weight:bold"
+   id="flowSpan42605">Pulse-chase experiments</flowSpan> allow to measure kinetic rates for RNA synthesis and degradation. After the pulse period, when cells are cultured in the presence of the label, the chase period follows with no labelling (fig. B). Hence, the labelled RNA is being only degraded during the chase time.</flowPara><flowPara
            id="flowPara35534">The set-up can be varied in terms of time ranges and types of collected fractions (e.g. all 3 fractions or only total and labelled ones)</flowPara></flowRoot>      <flowRoot
          xml:space="preserve"
          id="flowRoot12500-6"
@@ -6758,8 +6760,10 @@
              x="1081.7856"
              y="3314.1523"
              style="text-align:justify;text-anchor:start" /></flowRegion><flowPara
-           id="flowPara12506-8">There are two processes involved in RNA metabolism: RNA synthesis and degradation. In order to be able to measure the reaction rates, one needs to distinguish the newly synthesized RNA from the older one. Different approaches were developed, which are based on addition of modified uridine molecules, namely, 4-thiouridine (4sU), 5-etyniluridine (EU) and 5′-bromo-uridine (BrU). </flowPara><flowPara
-           id="flowPara35536">The figure is adapted from Click-iT® Kit Thermofisher manual.</flowPara><flowPara
+           id="flowPara12506-8"><flowSpan
+   style="font-weight:bold"
+   id="flowSpan42607">RNA labelling:</flowSpan> There are two processes involved in RNA metabolism: RNA synthesis and degradation. In order to be able to measure the reaction rates, one needs to distinguish the newly synthesized RNA from the older one. Different approaches were developed, which are based on addition of modified uridine molecules, namely, 4-thiouridine (4sU), 5-etyniluridine (EU) and 5′-bromo-uridine (BrU). </flowPara><flowPara
+           id="flowPara35536">The figure A is adapted from the Click-iT® Kit Thermofisher manual.</flowPara><flowPara
            id="flowPara35538"
            style="font-size:24px">References: </flowPara><flowPara
            id="flowPara35540"
