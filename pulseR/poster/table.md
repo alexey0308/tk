@@ -9,6 +9,7 @@
  non$-$constant rates   & $-$          &   $+$         &  $+$   &  $-$ & $-$         \\\hline 
       uridine bias      & $\ast$       &   $-$         &  $-$   &  $+$ & $+$         \\\hline 
        RNA processing   &$\ast$        &   $+$         &  $+$   &  $-$ & $-$         \\\hline 
+    confidence intervals& $+$          &   $-$         &  $-$   &  $-$ & $-$         \\\hline 
   language              & R            &MATLAB         &  R     &  R   & Java      \\\hline 
  \end{tabular}
 \end{table} 
