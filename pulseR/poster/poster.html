@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="Generator" content="Kate, the KDE Advanced Text Editor" />
+<title>poster.R</title>
+</head>
+<body>
+<pre style='color:#1f1c1b;background-color:#ffffff;'>
+<b>library</b>(pulseR)
+<span style='color:#898887;'># put math here</span>
+formulas <b><span style='color:#336366;'>&lt;-</span></b><span style='color:#bf0303;'> </span><b>MeanFormulas</b>(
+  <span style='color:#0057ae;'>total      =</span> mu,
+  <span style='color:#0057ae;'>labelled   =</span> mu <span style='color:#803f00;'>*</span><span style='color:#bf0303;'> </span>(<span style='color:#b08000;'>1</span> <span style='color:#803f00;'>-</span><span style='color:#bf0303;'> </span><b>exp</b>(<span style='color:#803f00;'>-</span>d <span style='color:#803f00;'>*</span><span style='color:#bf0303;'> </span><span style='color:#b08000;'>22</span>)) <span style='color:#803f00;'>*</span><span style='color:#bf0303;'> </span><b>exp</b>(<span style='color:#803f00;'>-</span>d <span style='color:#803f00;'>*</span><span style='color:#bf0303;'> </span>time),
+  <span style='color:#0057ae;'>unlabelled =</span> mu <span style='color:#803f00;'>*</span><span style='color:#bf0303;'> </span>(<span style='color:#b08000;'>1</span> <span style='color:#803f00;'>-</span><span style='color:#bf0303;'> </span><b>exp</b>(<span style='color:#803f00;'>-</span>d <span style='color:#803f00;'>*</span><span style='color:#bf0303;'> </span>time) <span style='color:#803f00;'>*</span><span style='color:#bf0303;'> </span>(<span style='color:#b08000;'>1</span> <span style='color:#803f00;'>-</span><span style='color:#bf0303;'> </span><b>exp</b>(<span style='color:#803f00;'>-</span>d <span style='color:#803f00;'>*</span><span style='color:#bf0303;'> </span><span style='color:#b08000;'>22</span>)))
+)
+<span style='color:#898887;'># define the fractions</span>
+formulaIndexes <b><span style='color:#336366;'>&lt;-</span></b><span style='color:#bf0303;'> </span><b>list</b>(
+  <span style='color:#0057ae;'>total_fraction =</span> <span style='color:#bf0303;'>'total'</span>,
+  <span style='color:#0057ae;'>pull_down      =</span> <b>c</b>(<span style='color:#bf0303;'>'labelled'</span>, <span style='color:#bf0303;'>'unlabelled'</span>))
+lbNormFactors <b><span style='color:#336366;'>&lt;-</span></b><span style='color:#bf0303;'> </span><b>list</b>(
+  <span style='color:#0057ae;'>total_fraction =</span> <span style='color:#b08000;'>.1</span>,
+  <span style='color:#0057ae;'>pull_down      =</span> <b>c</b>(<span style='color:#b08000;'>.1</span>,<span style='color:#b08000;'>.00001</span>))
+ubNormFactors <b><span style='color:#336366;'>&lt;-</span></b><span style='color:#bf0303;'> </span><b>list</b>(
+  <span style='color:#0057ae;'>total_fraction =</span> <span style='color:#b08000;'>10</span>,
+  <span style='color:#0057ae;'>pull_down      =</span> <b>c</b>(<span style='color:#b08000;'>10</span>, <span style='color:#b08000;'>.3</span>))
+opts <b><span style='color:#336366;'>&lt;-</span></b><span style='color:#bf0303;'> </span><b>setBoundaries</b>(<b>list</b>(
+  <span style='color:#0057ae;'>mu   =</span> <b>c</b>(<span style='color:#b08000;'>.1</span>, <span style='color:#b08000;'>1e8</span>),
+  <span style='color:#0057ae;'>d    =</span> <b>c</b>(<span style='color:#b08000;'>1e-4</span>, <span style='color:#b08000;'>9</span>),
+  <span style='color:#0057ae;'>size =</span> <b>c</b>(<span style='color:#b08000;'>1</span>,<span style='color:#b08000;'>1e6</span>)),
+  <span style='color:#0057ae;'>normFactors =</span> <b>list</b>(lbNormFactors, ubNormFactors)
+)
+<span style='color:#898887;'># let conditions be in a data.frame (sample, fraction, time)  </span>
+pd <b><span style='color:#336366;'>&lt;-</span></b><span style='color:#bf0303;'> </span><b>PulseData</b>(counts, conditions, formulas, formulaIndexes,
+  <span style='color:#0057ae;'>groups =</span> <span style='color:#803f00;'>~</span><span style='color:#bf0303;'> </span>fraction <span style='color:#803f00;'>+</span><span style='color:#bf0303;'> </span>time)
+result <b><span style='color:#336366;'>&lt;-</span></b><span style='color:#bf0303;'> </span><b>fitModel</b>(pd, initParValues, opts)</pre>
+</body>
+</html>
