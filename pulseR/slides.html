@@ -14,7 +14,7 @@
 
 		<!-- Theme used for syntax highlighting of code -->
 	      <link rel="stylesheet" href="reveal.js/lib/css/github.css"> 
-    <!--<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css"> -->
+    <link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -28,11 +28,16 @@
 	<body>
 	
 		<div class="reveal">
+<div style="position:absolute;  bottom:1%; left:1%; height: 60px; "> 
+<img src="fig/siegel/logo-final.png" height="100%" style="vertical-align:middle;">
+<span style="font-size:.6em;"> Alexey Uvarovskii.  pulseR for RNA kinetics </span>
+</div>
+		
 			<div class="slides">
 			
 <section id="main" class="slide level1" data-background-color="#333333"
 data-background-transition="slide" data-transition="slide" data-state="title">
-<p style="font-family: sans" >Analysis of RNA dynamics <br> 
+<p style="font-family: sans" >Analysis of RNA kinetics <br> 
 <span style="font-size: 70%" </span> using</p>
 <!-- <div style = "left: 250px; top: 200px; position: absolute" > -->
 <div>
@@ -66,34 +71,54 @@ data-background-transition="slide" data-transition="slide" data-state="title">
     <img align="center" src="fig/siegel/bmbf.png" width="250">
   </div>
   <div style="display: inline-block; vertical-align: middle">
-    <img align="center" src="fig/siegel/DZHK_Logo.jpg" width="400">
+    <img align="center" src="fig/siegel/Klaus-Tschira-Stiftung_Logo.jpg" width="400">
   </div>
 </div>
+<p style="font-size:.8em">
+ Tobias Jakobi (Dieterich Lab) - computing support </p>
+<p style="font-size:.8em">
+ David Vilchez, Seda
+Koyuncu (CECAD Cologne), <br> Janine Altmüller, Marek Franitza (CCG Cologne) - 
+experimental data
+ </p>
 </section>
 
-<section data-transition="slide-in fade-out">
-<h2> Do you see a difference? </h2>
-
+<section data-transition="slide-in ">
+<h2> Is there a difference? </h2>
 <div style="position:relative; width:640px; margin:0 auto;">
-<p class="fragment " data-fragment-index="0" style="font-size:80%">
+<p class="fragment " data-fragment-index="0" style="font-size:80%; ">
 Number of motor vehicle deaths in the US <span style="font-size:80%"> (wiki) 
 </span></p>
 </div>
 <div style="position:relative; width:640px; height:480px; margin:0 auto;">
-  <img class="fragment fade-out" data-fragment-index="0" width="640" height="480" 
-  src="fig/twoBar.png" style="position:absolute;top:0;left:0;" />
-  <img class="fragment "  data-fragment-index="0" width="640" height="480"
-  src="fig/twoBar-cars.png" style="position:absolute;top:0;left:0;" />
+  <img class="fragment fade-out" data-fragment-index="0"  height="480" width="640px"
+  src="fig/twoBar.png" style="position:absolute;top:0; left:0;" />
+  <img class="fragment "  data-fragment-index="0"  height="480" width="640px"
+  src="fig/twoBar-cars.png" style="position:absolute;top:0; left:0;" /> 
 </div>
 </section>
 
-<section  data-background-color="#ffffff" data-transition="fade-in fade-out">
+
+<section>
 <h2> Same number, different context </h2>
 <div class="fragment" >
 <h2> I bet you think about</h2> 
 <h1 style="color:#4690d4"> Rates </h1>
 </div>
 </section>
+
+<section> 
+<h2> Reads in RNA-seq </h2>
+<div style="position:relative; width:640px; margin:0 auto;">
+<p  style="font-size:80%; visibility: hidden;">
+Number of motor vehicle deaths in the US <span style="font-size:80%"> (wiki) 
+</span></p>
+</div>
+<div style="position:relative; width:640px; height:480px; margin:0 auto;">
+  <img   height="480" width="640px" src="fig/twoBar-rna.png" style="position:absolute;top:0;left:0;" />
+</div>
+</section>
+
 <!-- red color:#e31a1c -->
 <!-- blue color:#4690d4 -->
 <section > 
@@ -113,8 +138,11 @@ $$ \sf [\text{steady state RNA}] = \frac{[\text{synthesis}]}{[\text{degradation 
 
 <section >
 <h3> Nascent RNA can be traced </h3>
-<div style="position:relative; width:640px;   margin:0 auto;">
-<img src="fig/fisher.svg" width="640px" >
+<p style="font-size".8em"> EU = 5-etyniluridine </p>
+<div style="position:relative; width:540px;   margin:0 auto;">
+<img src="fig/fisher2.svg" width="540px" > <br>
+<span style="font-size:.3em"> from the Click-iT® Kit
+Thermofisher manual </span>
 </div>
 usual RNA-seq after then
 </section>
@@ -123,11 +151,11 @@ usual RNA-seq after then
 <h3> Pulse-chase experiment </h3>
 <p> a way to measure RNA kinetics </p>
 <div>
-    <img align="center" src="fig/chase.png" width="650">
+    <img align="center" src="fig/chase.png" width="520">
 </div>
 </section>
 
-<section>
+<section> 
 <h2> Background </h2>
 <ul>
 <li> rates are also interesting </li>
@@ -145,13 +173,17 @@ usual RNA-seq after then
 <li> normalisation </li>
 </ul>
 
-<h3 class="fragment" >
+<div class="fragment" >
+<h3> 
 <span style="font-family: monospace"> pulseR </span> to help </h3>
-
+<p style="font-size:.5em">
+Alexey Uvarovskii, Christoph Dieterich; pulseR: Versatile computational analysis of RNA turnover from metabolic labeling experiments. Bioinformatics 2017 btx368. doi: 10.1093/bioinformatics/btx368
+</p>
+</div>
 </section>
 
 <section>
-<h2> Math model </h2>
+<h2> Kinetic model </h2>
 <p style="padding: 0 0 40px 0"> defined by the setup,
  e.g. pulse labelling is </p>
 <p> $$
@@ -160,15 +192,22 @@ usual RNA-seq after then
 \end{align}$$
 </p>
 <p>
-$$\sf t = 0, 1, 2, 4\, \text{hr} $$
+$$\sf t =  1, 2, 4\, \text{hr} $$
 </p>
 </section>
 
 <section>
 <h2> Stat model </h2>
-<p> Count model for count data: </p>
 <p> Negative binomial distribution </p>
-<p> Fitting by maximum likelihood estimation (MLE)</p>
+<img src="fig/overdispersion.jpg" height="300px">
+<p style="font-size:.6em">
+purple: no overdispersion, yellow: with overdispersion
+</p>
+<p style="font-size:.4em">
+Anders, Simon, and Wolfgang Huber. 
+"Differential expression analysis for sequence count data."
+Genome biology 11.10 (2010): R106.
+</p>
 </section>
 
 <section>
@@ -201,10 +240,21 @@ $$
 </section>
 
 <section >
+<h3> Alternatives </h3> 
+<div style="position:relative; height:360px;  margin:0 auto;">
+<img src="poster/table.png" height="300px"     style="vertical-align: middle;">
+</div>
+<p style="font-size:.7em">
+ N: normal, NB: negative binomial, BIN: binomial. <br>
+*: must be defined by user. <sup>1</sup>: pulse, chase or combination there of experiments.
+</p>
+</section>
+
+<section >
 <h3> EU pulse-chase on H9 cells </h3>
-<p> pulse (22hr) &#8212 chase (0, 4, 8hr) </p>
-<div style="position:relative; width:640px; height:480px; margin:0 auto;">
-<img src="fig/fit.png" >
+<div style="position:relative; height:480px;  margin:0 auto;">
+<img src="fig/vilchez.png" height="200px" style="vertical-align: middle;">
+<img src="fig/fit.png" height="400px"     style="vertical-align: middle;">
 </div>
 
 </section>
@@ -216,7 +266,7 @@ $$
 can estimate confidence intervals for you 
 </p>
 <div style="display: inline-block; text-align: left">
- <p class="fragment" data-fragment-index="1" style="color:#e31a1c">Good for:
+ <p class="fragment" data-fragment-index="1" style="color:#e31a1c">
  diagnostics and comparisons</p>
 </div>
 
@@ -235,6 +285,14 @@ can estimate confidence intervals for you
 
 <section>
 
+<h3> Profile likelihood </h3>
+$ \frac{\log L(d)}{\log L(d_{optimal})} < \frac{1}{2}\chi^2_{0.95,1 \,d.f.} \approx 1.92 $
+<div style="position:relative;  height:400px; margin:0 auto;">
+<img src="fig/goodCI.png" height="100%">
+</div>
+</section>
+
+<section>
 <h3> Uncertainty in fit </h3>
 <img src="fig/ci.gif" width="60%">
 
@@ -262,7 +320,7 @@ formulaIndexes <- list(
  <code data-trim>
 pd <- PulseData(counts, conditions, formulas, formulaIndexes,
   groups = ~ fraction + time)
-result <- fitModel(pd, ipar, opts)
+result <- fitModel(pd, initValues, opts)
  </code>
  </pre>
   </section>
@@ -292,9 +350,8 @@ result <- fitModel(pd, ipar, opts)
 <img src="logo.png" width="150px">
 </div>
 <div style="position:absolute; top:380px; left:180px">
-<p style="font-family:monospace"> alexey.mipt@gmail.com </p>
+<p style="font-family:monospace"> a.uvarovskii@uni-heidelberg.de </p>
 </div>
-
 </section>
 
 
@@ -311,6 +368,8 @@ result <- fitModel(pd, ipar, opts)
 				history: true,
         transition: 'none',
         backgroundTransition: 'fade',
+//        width: "100%",
+//    height:"100%",
           math: {
          mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
         config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
@@ -335,5 +394,28 @@ result <- fitModel(pd, ipar, opts)
       //  MathJax.Hub.Rerender();
       //});
 		</script>
+	
+	
+	<!-- footers -->
+	<style type="text/css">
+    /* 1. Style header/footer <div> so they are positioned as desired. */
+    #header-left {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+    }
+    #header-right {
+        position: absolute;
+        top: 0%;
+        right: 0%;
+    }
+    #footer-left {
+        position: absolute;
+        bottom: 0%;
+        left: 0%;
+    }
+</style>
+
+
 	</body>
 </html>
