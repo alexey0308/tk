@@ -2,7 +2,7 @@
  \vspace*{-.4cm}
  \begin{tabular}{|l|c|c|c|c|c|}\hline
                         &\verb|pulseR| &DRiLL          &INSPEcT&DTA    &HALO       \\\hline
- statistical model      & NB           &N, BIN         &N       & $-$  & $-$      \\\hline                         
+ statistical model      & NB           &N, BIN         &N       & $?$  & $?$      \\\hline                         
  spike$-$ins            & $+$          &   $-$         &  $-$   &  $-$ & $-$         \\\hline               
  several time points    & $+$          &   $+$         &  $+$   &  $-$ & $-$         \\\hline                    
   variable design $^1$  & $+$          &   $-$         &  $-$   &  $-$ & $-$         \\\hline 

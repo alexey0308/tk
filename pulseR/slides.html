@@ -30,7 +30,7 @@
 		<div class="reveal">
 <div style="position:absolute;  bottom:1%; left:1%; height: 60px; "> 
 <img src="fig/siegel/logo-final.png" height="100%" style="vertical-align:middle;">
-<span style="font-size:.6em;"> Alexey Uvarovskii.  pulseR for RNA kinetics </span>
+<span style="font-size:.6em; z-index:1;"> Alexey Uvarovskii.  pulseR for RNA kinetics </span>
 </div>
 		
 			<div class="slides">
@@ -138,11 +138,11 @@ $$ \sf [\text{steady state RNA}] = \frac{[\text{synthesis}]}{[\text{degradation 
 
 <section >
 <h3> Nascent RNA can be traced </h3>
-<p style="font-size".8em"> EU = 5-etyniluridine </p>
+<p style="font-size".8em"> EU = 5-ethyniluridine </p>
 <div style="position:relative; width:540px;   margin:0 auto;">
-<img src="fig/fisher2.svg" width="540px" > <br>
-<span style="font-size:.3em"> from the Click-iT® Kit
-Thermofisher manual </span>
+  <img src="fig/fisher2.svg" width="540px" > <br>
+  <span style="font-size:.3em"> from the Click-iT® Kit
+  Thermofisher manual </span>
 </div>
 usual RNA-seq after then
 </section>
@@ -242,19 +242,26 @@ $$
 <section >
 <h3> Alternatives </h3> 
 <div style="position:relative; height:360px;  margin:0 auto;">
-<img src="poster/table.png" height="300px"     style="vertical-align: middle;">
+<img src="fig/table-color.png" height="360px"     style="vertical-align: middle;">
 </div>
 <p style="font-size:.7em">
- N: normal, NB: negative binomial, BIN: binomial. <br>
-*: must be defined by user. <sup>1</sup>: pulse, chase or combination there of experiments.
+ N: normal, NB: negative binomial, BIN: binomial. 
 </p>
 </section>
 
+
+
 <section >
 <h3> EU pulse-chase on H9 cells </h3>
-<div style="position:relative; height:480px;  margin:0 auto;">
-<img src="fig/vilchez.png" height="200px" style="vertical-align: middle;">
-<img src="fig/fit.png" height="400px"     style="vertical-align: middle;">
+
+<div style="position:relative; width:640px; height: 480px; margin:0 auto;">
+  <div style="position:absolute; top:0; left:0; "> 
+    <img src="fig/fit.png" width="640px">
+  </div>
+  <div style="position:absolute;  top:00px; right:-250px; z-index:1;  "> 
+   <p style="font-size:.5em; margin: 0 0 0 0;position: relative; left: -20px;top: 20px;" >design</p>
+    <img src="fig/vilchez.png" width="300px">
+  </div>
 </div>
 
 </section>
@@ -354,6 +361,38 @@ result <- fitModel(pd, initValues, opts)
 </div>
 </section>
 
+
+<section>
+
+<p style="top:0px;  "> Poster A-271 </p>
+<p> An open post-doc position </p>
+<div>
+
+<div style=" text-align: left;">
+  <div style="width:80%">
+    <div style=" display: inline;">
+      <img src="heart.png" width="100px" style="vertical-align: middle">
+    </div>
+    <div style=" display: inline;">
+      <span>dieterichlab.org </span> 
+    </div>
+  </div>
+  <div style="width:80%">
+    <div style=" display: inline;">
+      <img src="logo.png" width="100px" style="vertical-align: middle">
+    </div>
+    <div style="width:20%; display: inline;">
+      <span>github.com/dieterich-lab/pulseR </span>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div> 
+<p style="font-family:monospace"> a.uvarovskii@uni-heidelberg.de </p>
+</div>
+</section>
 
 
     </div>
