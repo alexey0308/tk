@@ -7,11 +7,11 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="de_files/reveal.js-3.3.0.1/css/reveal.css"/>
+  <link rel="stylesheet" href="../libs/reveal.js-3.3.0.1/css/reveal.css"/>
 
 
 
-<link rel="stylesheet" href="de_files/reveal.js-3.3.0.1/css/theme/simple.css" id="theme">
+<link rel="stylesheet" href="../libs/reveal.js-3.3.0.1/css/theme/simple.css" id="theme">
 
 
   <!-- some tweaks to reveal css -->
@@ -442,7 +442,6 @@ style.innerHTML = style_script;
 document.getElementsByTagName('head')[0].appendChild(style);
 </script>
 
-    <link href="de_files/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
 </head>
 <body>
   <div class="reveal">
@@ -473,8 +472,8 @@ which genes/tx/exons are affected?
     </div>
   </div>
 
-  <script src="de_files/reveal.js-3.3.0.1/lib/js/head.min.js"></script>
-  <script src="de_files/reveal.js-3.3.0.1/js/reveal.js"></script>
+  <script src="../libs/reveal.js-3.3.0.1/lib/js/head.min.js"></script>
+  <script src="../libs/reveal.js-3.3.0.1/js/reveal.js"></script>
 
   <script>
 
@@ -492,21 +491,8 @@ which genes/tx/exons are affected?
 
 
 
-        chalkboard: {
-          theme: 'whiteboard',
-        },
-
-        keyboard: {
-          67: function() { RevealChalkboard.toggleNotesCanvas() },    // toggle notes canvas when 'c' is pressed
-          66: function() { RevealChalkboard.toggleChalkboard() }, // toggle chalkboard when 'b' is pressed
-          46: function() { RevealChalkboard.clear() },    // clear chalkboard when 'DEL' is pressed
-           8: function() { RevealChalkboard.reset() },    // reset chalkboard data on current slide when 'BACKSPACE' is pressed
-          68: function() { RevealChalkboard.download() }, // downlad recorded chalkboard drawing when 'd' is pressed
-        },
-
         // Optional reveal.js plugins
         dependencies: [
-          { src: 'de_files/reveal.js-3.3.0.1/plugin/chalkboard/chalkboard.js', async: true },
         ]
       });
     </script>
@@ -515,7 +501,7 @@ which genes/tx/exons are affected?
     (function () {
       var script = document.createElement("script");
       script.type = "text/javascript";
-      script.src  = "de_files/mathjax-local/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+      script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
       document.getElementsByTagName("head")[0].appendChild(script);
     })();
   </script>
