@@ -170,17 +170,49 @@ Is effect = 0?
 <span style = "color:red">1</span>[Treatm]
 </div>
 
-```{r}
-
-```
 
 -----------
 
-### Plot
+### No Interaction
+
+```{r fig.width=4, fig.height=3, out.width="700px", dpi = 400}
+
+d <- data.frame(
+  cxcr5 = c(50, 100, 150, 200),
+  group = c("Cont", "KO", "Cont.Treat", "KO.Treat"))
+ggplot() + 
+  geom_point(data = d,aes(x = group, y = cxcr5)) +
+  scale_y_continuous(limits = c(0,250)) + 
+  geom_line(aes(x = c(2,2), y = c(50,150))) + 
+  geom_line(aes(x = c(4,4), y = c(100,200))) + 
+  ylab  ("CXCR5") + 
+  ggtitle("Same treatmenr effect") +
+  xlab("")
+```
+
 
 -------------
 
 ### Interaction
+
+```{r fig.width=4, fig.height=3, out.width="700px", dpi = 400}
+
+d <- data.frame(
+  cxcr5 = c(50, 100, 150, 120),
+  group = c("Cont", "KO", "Cont.Treat", "KO.Treat"))
+ggplot() + 
+  geom_point(data = d,aes(x = group, y = cxcr5)) +
+  scale_y_continuous(limits = c(0,250)) + 
+  geom_line(aes(x = c(2,2), y = c(50,150))) + 
+  geom_line(aes(x = c(4,4), y = c(100,120))) + 
+  ylab  ("CXCR5") + 
+  ggtitle("Same treatmenr effect") +
+  xlab("")
+```
+
+-----------
+
+### Interaction in model 
 
 <div class = "fragment">
  KO responds differently to treatment <br>
