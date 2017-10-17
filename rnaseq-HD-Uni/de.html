@@ -10,6 +10,43 @@
   <link rel="stylesheet" href="../libs/reveal.js-3.3.0.1/css/reveal.css"/>
 
 
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
 
 <link rel="stylesheet" href="../libs/reveal.js-3.3.0.1/css/theme/simple.css" id="theme">
 
@@ -59,6 +96,7 @@
 
     <style type="text/css">code{white-space: pre;}</style>
 
+    <link rel="stylesheet" href="../styles.css"/>
 
 <!-- Printing and PDF exports -->
 <script id="paper-css" type="application/dynamic-css">
@@ -468,6 +506,56 @@ which genes/tx/exons are affected?
 <div>
 
 
+
+</section>
+<section id="what-is-a-difference" class="slide level2">
+<h1>What is a difference</h1>
+<p><img src="de_files/figure-revealjs/unnamed-chunk-2-1.png" width="600px" /></p>
+</section>
+<section id="uncertainty" class="slide level2">
+<h1>Uncertainty</h1>
+<p>Compare your confidence if you</p>
+<ul>
+<li>made 20 qPCR replicates</li>
+<li>made 1 replicate (<em>the other did not work</em>)</li>
+<li>got the numbers from a guy in Irish pub</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3>
+Variance defines conclusion
+</h3>
+<p><img src="de_files/figure-revealjs/unnamed-chunk-4-1.png" width="900px" /></p>
+</section>
+<section class="slide level2">
+
+<h3 id="variance-and-counts">Variance and counts</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">replicatesNumber &lt;-<span class="st"> </span><span class="dv">100</span>
+lowExpression    &lt;-<span class="st"> </span><span class="dv">10</span>
+highExpression   &lt;-<span class="st"> </span><span class="dv">10000</span>
+<span class="co"># simulate experiment (&#39;random&#39; + &#39;Poisson&#39; = rpois)</span>
+rnaLow           &lt;-<span class="st"> </span><span class="kw">rpois</span>(replicatesNumber, lowExpression)
+rnaHigh          &lt;-<span class="st"> </span><span class="kw">rpois</span>(replicatesNumber, highExpression)
+<span class="co"># what is proportion of st. dev.?</span>
+<span class="kw">sd</span>(rnaLow)  /<span class="st"> </span><span class="kw">mean</span>(rnaLow)</code></pre></div>
+<pre><code>## [1] 0.2995187</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sd</span>(rnaHigh) /<span class="st"> </span><span class="kw">mean</span>(rnaHigh)</code></pre></div>
+<pre><code>## [1] 0.01010515</code></pre>
+</section>
+<section class="slide level2">
+
+<h3 id="variance-and-counts-1">Variance and counts</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">sort</span>(rnaLow) /<span class="st"> </span>lowExpression, <span class="dt">ylab =</span> <span class="st">&quot;normalised count&quot;</span>)
+<span class="kw">points</span>(<span class="kw">sort</span>(rnaHigh) /<span class="st"> </span>highExpression, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>)
+<span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;low&quot;</span>, <span class="st">&quot;high&quot;</span>), 
+       <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;black&quot;</span>, <span class="st">&quot;red&quot;</span>), <span class="dt">pch =</span> <span class="dv">1</span>)</code></pre></div>
+<p><img src="de_files/figure-revealjs/unnamed-chunk-6-1.png" width="400px" /></p>
+</section>
+<section id="resources" class="slide level2">
+<h1>Resources</h1>
+<p><a href="https://www.bioconductor.org/help/course-materials/2017/OSU/B3_RNASeq_Workflow.html">workflow 1</a><br />
+<a href="https://bioconductor.org/help/workflows/rnaseqGene/">workflow 2</a></p>
 </section>
     </div>
   </div>
