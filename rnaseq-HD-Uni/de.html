@@ -486,30 +486,30 @@ document.getElementsByTagName('head')[0].appendChild(style);
     <div class="slides">
 
 
-<section id="differential-expression" class="slide level2">
-<h1>Differential expression</h1>
+<section class="slide level2">
+
+<h3 id="differential-expression">Differential expression</h3>
 <p>Alexey Uvarovskii</p>
 17-10-17
 <div>
-<img src="fig/heart.png" 
-  style = "height: 100px; border:none; box-shadow: none;" >
+<p><img src="fig/heart.png" 
+  style = "height: 100px; border:none; box-shadow: none;" ></p>
 </div>
 </section>
-<section id="de-analysis" class="slide level2">
-<h1>DE analysis</h1>
+<section class="slide level2">
+
+<h3 id="de-analysis">DE analysis</h3>
 <ul>
 <li class="fragment">RNA level (other feature)</li>
 <li class="fragment">Groups</li>
 </ul>
 <div class="fragment" style="padding-top:100px">
-which genes/tx/exons are affected?
-<div>
-
-
-
+<p>which genes/tx/exons are affected?</p>
+</div>
 </section>
-<section id="what-is-a-difference" class="slide level2">
-<h1>What is a difference</h1>
+<section class="slide level2">
+
+<h3 id="what-is-a-difference">What is a difference</h3>
 <p><img src="de_files/figure-revealjs/unnamed-chunk-2-1.png" width="600px" /></p>
 </section>
 <section id="uncertainty" class="slide level2">
@@ -545,12 +545,92 @@ rnaHigh          &lt;-<span class="st"> </span><span class="kw">rpois</span>(rep
 </section>
 <section class="slide level2">
 
-<h3 id="variance-and-counts-1">Variance and counts</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">sort</span>(rnaLow) /<span class="st"> </span>lowExpression, <span class="dt">ylab =</span> <span class="st">&quot;normalised count&quot;</span>)
-<span class="kw">points</span>(<span class="kw">sort</span>(rnaHigh) /<span class="st"> </span>highExpression, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>)
-<span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="kw">c</span>(<span class="st">&quot;low&quot;</span>, <span class="st">&quot;high&quot;</span>), 
-       <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;black&quot;</span>, <span class="st">&quot;red&quot;</span>), <span class="dt">pch =</span> <span class="dv">1</span>)</code></pre></div>
-<p><img src="de_files/figure-revealjs/unnamed-chunk-6-1.png" width="400px" /></p>
+<h3 id="low-count-measurements-are-noisy">Low count measurements are noisy</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(rnaLow /<span class="st"> </span>lowExpression, rnaHigh /<span class="st"> </span>highExpression,
+        <span class="dt">names =</span> <span class="kw">c</span>(<span class="st">&quot;low&quot;</span>, <span class="st">&quot;high&quot;</span>))</code></pre></div>
+<p><img src="de_files/figure-revealjs/unnamed-chunk-6-1.png" width="500px" /></p>
+</section>
+<section class="slide level2">
+
+<h3 id="linear-models">Linear models</h3>
+<p>[expression control] = [base level] <br> [expression KO] = [base level] + [effect]</p>
+<div class="fragment" style="color:blue">
+<p>Is effect = 0?</p>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="multifactorial-design">Multifactorial design</h3>
+<p>[RNA] = [base] + [KO eff.] + [Treatm]</p>
+<div class="fragment">
+<p>control without treatment <br> [RNA] = [base] + <span style="color:red">0</span>[KO eff.] + <span style="color:red">0</span>[Treatm]</p>
+</div>
+<div class="fragment">
+<p>KO with treatment <br> [RNA] = [base] + <span style="color:red">1</span> [KO eff.] + <span style="color:red">1</span>[Treatm]</p>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="plot">Plot</h3>
+</section>
+<section class="slide level2">
+
+<h3 id="interaction">Interaction</h3>
+<div class="fragment">
+<p>KO responds differently to treatment <br> [RNA] = [base] + <span style="color:red">1</span> [KO eff.] + <span style="color:red">1</span>[Treatm] + <span style="color:green">1[Treatm.KO]</span></p>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="normalisation">Normalisation</h3>
+<div align="left">
+CXCR5 in <br> Run 1: 1000 reads <br> Run 2: 2000 reads (2x higher depth)
+<div class="fragment">
+<p>All genes have double expression?</p>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="fpkm-rpkm-cpm">FPKM / RPKM / CPM</h3>
+<div align="left">
+<p><span class="math display">\[\text{ CPM} =  \frac{\text{reads}}{\text{depth (in mio&#39;s)}} \]</span> <span class="math display">\[\text{ RPKM} =  \frac{\text{reads}}{\text{depth (in mio&#39;s)}\cdot \text{length (in kB)}} \]</span></p>
+</div>
+<p><br> FPKM is RPKM, only F = fragments</p>
+</section>
+<section class="slide level2">
+
+<h3 id="when-it-fails">When it fails</h3>
+<p>plot</p>
+</section>
+<section class="slide level2">
+
+<h3 id="tmmdeseq2">TMM/DESeq2</h3>
+<p>exercise</p>
+</section>
+<section class="slide level2">
+
+<h3 id="batch-effects">Batch effects</h3>
+</section>
+<section class="slide level2">
+
+<h3 id="pca">PCA</h3>
+</section>
+<section class="slide level2">
+
+<h3 id="clustering">Clustering</h3>
+</section>
+<section class="slide level2">
+
+<h3 id="annotation">Annotation</h3>
+</section>
+<section class="slide level2">
+
+<h3 id="variations">Variations</h3>
+</section>
+<section class="slide level2">
+
+<p>DExon usage</p>
 </section>
 <section id="resources" class="slide level2">
 <h1>Resources</h1>
